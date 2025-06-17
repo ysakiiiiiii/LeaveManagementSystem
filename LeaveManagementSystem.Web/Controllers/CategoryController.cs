@@ -26,9 +26,24 @@ namespace LeaveManagementSystem.Web.Controllers
         [HttpPost]
         public IActionResult Create(Category obj)
         {
+            if(obj.Name == obj.DisplayOrder.ToString())
+            {
+                ModelState.AddModelError("name", "Display order must not match with the name!");
+            }
+
+            if (obj.Name.ToLower() == "test")
+            {
+                ModelState.AddModelError("", "Display order must not match with the name!");
+            }
+
+            if (ModelState.IsValid)
+            {
             _db.Categories.Add(obj);
             _db.SaveChanges();
             return RedirectToAction("Index");
+            }
+
+            return View(obj);
         }
     }
 }
