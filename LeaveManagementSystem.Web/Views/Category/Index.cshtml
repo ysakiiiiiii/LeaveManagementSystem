@@ -1,8 +1,20 @@
-﻿<h1>Category List</h1>
+﻿@model List<Category>
+
+<h1>Category List</h1>
 <table class="table table-bordered table-striped">
-	<tr>
-		<th>Category ID</th>
-		<th>Category Name</th>
-		<th>Description</th>
-	</tr>
+	<thead>
+		<tr>
+			<th>Category Name</th>
+			<th>Category Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var category in Model)
+		{
+			<tr>
+				<td>@category.Name</td>
+				<td>@category.DisplayOrder</td>
+			</tr>
+		}
+	</tbody>
 </table>
