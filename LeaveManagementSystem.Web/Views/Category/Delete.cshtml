@@ -3,20 +3,18 @@
 <form method="post">
 	<input asp-for="Id" hidden />
 	<div class="border p-3 mt-4">
-		<h2 class="text-primary">Edit Category</h2>
+		<h2 class="text-primary">Delete Category</h2>
 		<div asp-validation-summary="All"></div>
 		<div class="mb-3">
 			<label asp-for="Name" class="form-label"></label>
-			<input asp-for="Name" class="form-control" placeholder="Enter the category name" />
-			<span asp-validation-for="Name" class="text-danger"></span>
+			<input asp-for="Name" disabled class="form-control" placeholder="Enter the category name" />
 		</div>
 		<div class="mb-3">
 			<label asp-for="DisplayOrder" class="form-label"></label>
-			<input asp-for="DisplayOrder" class="form-control" placeholder="Enter the display order" />
-			<span asp-validation-for="DisplayOrder" class="text-danger"></span>
+			<input asp-for="DisplayOrder" disabled class="form-control" placeholder="Enter the display order" />
 		</div>
-		<div class="mb-3">
-			<button type="submit" class="btn btn-primary">Update</button>
+		<div class="mb-3 d-flex ">
+			<button type="submit" class="btn btn-danger ">Delete</button>
 			<a asp-controller="Category" asp-action="Index" class="btn btn-secondary">Back to List</a>
 		</div>
 	</div>

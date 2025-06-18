@@ -110,8 +110,6 @@ namespace LeaveManagementSystem.Web.Controllers
             _db.Categories.Remove(obj);
             _db.SaveChanges();
             return RedirectToAction("Index");
-            
-
         }
     }
 }
